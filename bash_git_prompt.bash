@@ -28,6 +28,6 @@ kig_CheckNotCommit() {
 
 kig_FormattingText() {
   if [ -a "./.git" ]; then
-    echo -e " (\033[36m$(kig_GetNowBranch)\033[0m$(kig_CheckNotCommit):$(kig_CheckNotPush))"
+    echo -e " \033[0m(\033[36m$(kig_GetNowBranch)\033[0m$(kig_CheckNotCommit):$(kig_CheckNotPush)\033[0m)"
   fi
 }
