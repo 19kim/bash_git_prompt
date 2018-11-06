@@ -1,7 +1,7 @@
-getNowBranch() {
+kig_GetNowBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
-CheckNotPush() {
+kig_CheckNotPush() {
   pushlog=`git log --branches --oneline -1 --not --remotes 2> /dev/null`
   
   if [ -z "$pushlog" ]; then
@@ -11,7 +11,7 @@ CheckNotPush() {
   fi
 }
 
-CheckNotCommit() {
+kig_CheckNotCommit() {
   difflog=`git diff`
   
   if [ -z "$difflog" ]; then
@@ -21,8 +21,8 @@ CheckNotCommit() {
   fi
 }
 
-FormattingText() {
+kig_FormattingText() {
   if [ -a "./.git" ]; then
-    echo " ($(getNowBranch)$(CheckNotCommit):$(CheckNotPush))"
+    echo " ($(bgp_GetNowBranch)$(bgp_CheckNotCommit):$(bgp_CheckNotPush))"
   fi
 }
