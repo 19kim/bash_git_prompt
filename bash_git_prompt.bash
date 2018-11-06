@@ -1,3 +1,8 @@
+# E-mail : kimig009@gmail.com
+# Version : 1.0
+# 적용법 : .bashrc PS1에 kig_FormattingText 함수를 넣으세요.bashrc
+# $(kig_FormattingText)
+
 kig_GetNowBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
