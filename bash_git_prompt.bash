@@ -2,11 +2,11 @@ getNowBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 CheckNotPush() {
-  pushlog=git log --branches --not --remotes 2> /dev/null
+  pushlog=`git log --branches --oneline -1 --not --remotes 2> /dev/null`
   
-  if [ -z pushlog ]; then
-    echo "비었음."
+  if [ -z "$pushlog" ]; then
+    echo "✔"
   else
-    echo "필요함"
+    echo "✖"
   fi
 }
