@@ -5,9 +5,14 @@ CheckNotPush() {
   pushlog=`git log --branches --oneline -1 --not --remotes 2> /dev/null`
   
   if [ -z "$pushlog" ]; then
-    echo "✔"
+    echo " ✔ "
   else
-    echo "✖"
+    echo " ✖ "
+  fi
+}
+FormattingText() {
+  if [ -a "./.git" ]; then
+    echo " ($(getNowBranch)$(CheckNotPush))"
   fi
 }
 
