@@ -1,5 +1,5 @@
 # E-mail : kimig009@gmail.com
-# Version : 1.0.1
+# Version : 1.0.2
 # 적용법 : .bashrc PS1에 kig_FormattingText 함수를 넣으세요.bashrc
 # $(kig_FormattingText)
 
