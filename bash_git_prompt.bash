@@ -5,9 +5,9 @@ kig_CheckNotPush() {
   pushlog=`git log --branches --oneline -1 --not --remotes 2> /dev/null`
   
   if [ -z "$pushlog" ]; then
-    echo " ✔ "
+    echo -e " \033[32m✔\033[0m "
   else
-    echo " ✖ "
+    echo -e " \033[31m✖\033[0m "
   fi
 }
 
@@ -15,14 +15,14 @@ kig_CheckNotCommit() {
   difflog=`git diff`
   
   if [ -z "$difflog" ]; then
-    echo " ✔ "
+    echo " \033[32m✔\033[0m "
   else
-    echo " ✖ "
+    echo " \033[31m✖\033[0m "
   fi
 }
 
 kig_FormattingText() {
   if [ -a "./.git" ]; then
-    echo " ($(bgp_GetNowBranch)$(bgp_CheckNotCommit):$(bgp_CheckNotPush))"
+    echo -e " (\033[36m$(kig_GetNowBranch)\033[0m$(kig_CheckNotCommit):$(kig_CheckNotPush))"
   fi
 }
