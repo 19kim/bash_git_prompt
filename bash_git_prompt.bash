@@ -15,9 +15,9 @@ CheckNotCommit() {
   difflog=`git diff`
   
   if [ -z "$difflog" ]; then
-    echo "✔"
+    echo " ✔ "
   else
-    echo "✖"
+    echo " ✖ "
   fi
 }
 
