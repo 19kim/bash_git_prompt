@@ -10,11 +10,6 @@ CheckNotPush() {
     echo " ✖ "
   fi
 }
-FormattingText() {
-  if [ -a "./.git" ]; then
-    echo " ($(getNowBranch)$(CheckNotPush))"
-  fi
-}
 
 CheckNotCommit() {
   difflog=`git diff`
@@ -23,5 +18,11 @@ CheckNotCommit() {
     echo "✔"
   else
     echo "✖"
+  fi
+}
+
+FormattingText() {
+  if [ -a "./.git" ]; then
+    echo " ($(getNowBranch)$(CheckNotCommit):$(CheckNotPush))"
   fi
 }
