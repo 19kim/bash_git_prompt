@@ -10,3 +10,13 @@ CheckNotPush() {
     echo "✖"
   fi
 }
+
+CheckNotCommit() {
+  difflog=`git diff`
+  
+  if [ -z "$difflog" ]; then
+    echo "✔"
+  else
+    echo "✖"
+  fi
+}
