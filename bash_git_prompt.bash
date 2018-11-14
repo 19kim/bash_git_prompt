@@ -1,6 +1,6 @@
 # E-mail : kimig009@gmail.com
-# Version : 1.0.2
-# 적용법 : .bashrc PS1에 kig_FormattingText 함수를 넣으세요.bashrc
+# Version : 1.0.3
+# 적용법 : .bashrc PS1에 kig_FormattingText 함수를 넣으세요. 알아서
 # $(kig_FormattingText)
 
 kig_GetNowBranch() {
@@ -17,7 +17,7 @@ kig_CheckNotPush() {
 }
 
 kig_CheckNotCommit() {
-  difflog=`git diff`
+  difflog=`git diff HEAD`
   
   if [ -z "$difflog" ]; then
     echo " \033[32m✔\033[0m "
