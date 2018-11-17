@@ -1,5 +1,5 @@
 # E-mail : kimig009@gmail.com
-# Version : 1.0.3
+# Version : 1.1.0
 # 적용법:
 # 1. 해당 프로젝트를 불러옵니다.
 # 2. "$ vi ~/.bashrc" 명령어 입력
