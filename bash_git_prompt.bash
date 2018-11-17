@@ -17,7 +17,7 @@ kig_CheckNotPush() {
 }
 
 kig_CheckNotCommit() {
-  difflog=`git diff HEAD`
+  difflog=`git diff HEAD --name-only`
   
   if [ -z "$difflog" ]; then
     echo " \033[32m✔\033[0m "
