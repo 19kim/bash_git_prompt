@@ -1,7 +1,11 @@
 # E-mail : kimig009@gmail.com
 # Version : 1.0.3
-# 적용법 : .bashrc PS1에 kig_FormattingText 함수를 넣으세요. 알아서
-# $(kig_FormattingText)
+# 적용법:
+# 1. 해당 프로젝트를 불러옵니다.
+# 2. "$ vi ~/.bashrc" 명령어 입력
+# 3. vi창에서 상단 부에 "source 해당스크립트경로" 입력
+# 4. 기존에 설정하는 PS1 변수에 해당 부분이 들어가기를 원하는 곳에 $(kig_FormattingText)를 넣으세요.
+# 5. 완료
 
 kig_GetNowBranch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
